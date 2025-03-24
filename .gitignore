@@ -1,0 +1,19 @@
+# Ignore virtual environment
+venv/
+
+# Python stuff
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.env
+
+# Django specific
+db.sqlite3
+/static/
+media/
+
+# VS Code settings
+.vscode/
+
+# MacOS system files
+.DS_Store
