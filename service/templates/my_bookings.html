@@ -1,0 +1,24 @@
+<h2>My Service Bookings</h2>
+{% for booking in services %}
+    <p>
+        <strong>{{ booking.bike_model }}</strong><br>
+        Date: {{ booking.service_date }} at {{ booking.preferred_time }}<br>
+        Status: {{ booking.service_status }}<br>
+        {% if booking.mechanic_assigned %}
+            Assigned Mechanic: {{ booking.mechanic_assigned.name }}
+        {% else %}
+            Assigned Mechanic: Not yet assigned
+        {% endif %}<br>
+        {% if booking.service_status == 'Completed' %}
+             <a href="{% url 'view_invoice' booking.id %}">📄 Download Invoice</a>
+        {% endif %}
+
+        <br>
+
+        <a href="{% url 'edit_my_booking' booking.id %}">Edit</a> |
+        <a href="{% url 'cancel_my_booking' booking.id %}">Cancel</a>
+    </p>
+    <hr>
+{% empty %}
+    <p>You haven't booked any services yet.</p>
+{% endfor %}

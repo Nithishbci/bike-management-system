@@ -1,0 +1,11 @@
+<h2>Pending Bookings Waiting for Mechanic Assignment</h2>
+{% for booking in waiting_services %}
+    <p>
+        <strong>{{ booking.bike_model }}</strong> — {{ booking.service_date }} at {{ booking.preferred_time }}<br>
+        <strong>Requested by:</strong> {{ booking.booked_by.username }}<br>
+        <a href="{% url 'assign_mechanic' booking.id %}">Assign Mechanic</a>
+    </p>
+    <hr>
+{% empty %}
+    <p>All pending bookings have a mechanic assigned.</p>
+{% endfor %}

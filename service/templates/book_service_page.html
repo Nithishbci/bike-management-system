@@ -1,0 +1,6 @@
+<h2>Book Your Bike Service</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book Service</button>
+</form>

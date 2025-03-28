@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import MechanicDetails,RiderProfile
 
-# Register your models here.
+admin.site.register(MechanicDetails)
+admin.site.register(RiderProfile)

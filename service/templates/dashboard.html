@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rider Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ request.user.username }}!</h2>
+
+    <p>This is your dashboard, explore services here:</p>
+
+    <ul>
+        <li><a href="{% url 'arrange_bike_service' %}">Book a New Bike Service</a></li>
+        <li><a href="{% url 'my_booking_list' %}">View My Bookings</a></li>
+    </ul>
+
+    <a href="{% url 'rider_logout' %}">Logout</a>
+</body>
+</html>

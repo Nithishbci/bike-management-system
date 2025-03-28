@@ -1,0 +1,10 @@
+<h2>Welcome, Admin {{ request.user.username }} 👋</h2>
+
+<p>Here’s what you can manage:</p>
+
+<ul>
+    <li><a href="{% url 'list_unassigned_bookings' %}">🧑‍🔧 Assign Mechanics to New Bookings</a></li>
+    <li><a href="{% url 'see_all_bookings' %}">📋 View All Bookings</a></li>
+</ul>
+
+<a href="{% url 'rider_logout' %}">Logout</a>

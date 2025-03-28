@@ -1,0 +1,7 @@
+<h2>Assign Mechanic for {{ booking.bike_model }}</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Confirm Assignment</button>
+</form>

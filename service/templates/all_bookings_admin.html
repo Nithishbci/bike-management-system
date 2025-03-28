@@ -1,0 +1,22 @@
+<h2>All Bookings (Admin View)</h2>
+
+{% for booking in all_services %}
+    <div style="margin-bottom: 20px;">
+        <strong>Bike:</strong> {{ booking.bike_model }}<br>
+        <strong>Date:</strong> {{ booking.service_date }} at {{ booking.preferred_time }}<br>
+        <strong>Booked By:</strong> {{ booking.booked_by.username }}<br>
+        <strong>Status:</strong> {{ booking.service_status }}<br>
+        <a href="{% url 'update_service_status' booking.id %}">🛠️ Update Status</a>
+
+        {% if booking.mechanic_assigned %}
+            <strong>Mechanic:</strong> {{ booking.mechanic_assigned.name }}
+        {% else %}
+            <strong>Mechanic:</strong> Not Assigned
+        {% endif %}
+    </div>
+    <hr>
+{% empty %}
+    <p>No bookings found.</p>
+{% endfor %}
+
+
